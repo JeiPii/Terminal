@@ -1,0 +1,42 @@
+# For the benefit of emacs users: -*- shell-script -*-
+###########################
+# xbindkeys configuration #
+###########################
+#
+# Version: 1.8.6
+#
+# If you edit this file, do not forget to uncomment any lines
+# that you change.
+# The pound(#) symbol may be used anywhere for comments.
+#
+# To specify a key, you can use 'xbindkeys --key' or
+# 'xbindkeys --multikey' and put one of the two lines in this file.
+######################
+# MX Master Settings #
+######################
+
+# backward button
+"xte 'key XF86Back'"
+   b:8
+
+# forward button 
+"xte 'key XF86Forward'"
+   b:9
+
+# thumb button => go back in history
+# We need a sleep here since the button triggers a few more key codes (wtf?).
+# It also triggers Control+Mod2+Control_L and Alt+Mod2+Alt_L. The sleep
+# prevents that X receives those keypresses simultaniously. Therefore they
+# might interfere and trigger unwanted actions. By the sleep we make sure that
+# the Alt+Left is receive as distinct event.
+
+"xte 'key XF86AudioNext'"
+   m:0x1c + c:37 + b:6
+
+"xte 'key XF86AudioPrev'"
+   m:0x1c + c:37 + b:7
+
+
+##################################
+# End of xbindkeys configuration #
+##################################
